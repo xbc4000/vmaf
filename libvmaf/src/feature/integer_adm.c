@@ -740,9 +740,9 @@ static void adm_decouple(AdmBuffer *buf, int w, int h, int stride,
             r->band_v[i * stride + j] = tmpv;
             r->band_d[i * stride + j] = tmpd;
 
-            a->band_h[i * stride + j] = th - tmph;
-            a->band_v[i * stride + j] = tv - tmpv;
-            a->band_d[i * stride + j] = td - tmpd;
+            a->band_h[i * stride + j] = angle_flag ? 0. : th - tmph;
+            a->band_v[i * stride + j] = angle_flag ? 0. : tv - tmpv;
+            a->band_d[i * stride + j] = angle_flag ? 0. : td - tmpd;
         }
     }
 }
@@ -898,9 +898,9 @@ static void adm_decouple_s123(AdmBuffer *buf, int w, int h, int stride,
             r->band_v[i * stride + j] = tmpv;
             r->band_d[i * stride + j] = tmpd;
 
-            a->band_h[i * stride + j] = th - tmph;
-            a->band_v[i * stride + j] = tv - tmpv;
-            a->band_d[i * stride + j] = td - tmpd;
+            a->band_h[i * stride + j] = angle_flag ? 0. : th - tmph;
+            a->band_v[i * stride + j] = angle_flag ? 0. : tv - tmpv;
+            a->band_d[i * stride + j] = angle_flag ? 0. : td - tmpd;
         }
     }
 }
